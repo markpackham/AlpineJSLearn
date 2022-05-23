@@ -8,6 +8,7 @@
     <script src="./script.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* x-cloak 8?
         /* reduce flickering for x-data when page loads to hide the data */
         [x-cloak] {
             display: none;
@@ -19,21 +20,29 @@
     <div class="container mx-auto mt-6 max-w-sm">
         <h1 class="text-5xl mb-4">Learn Apline.js</h1>
 
+        <!-- x-data -->
         <div x-data="{open: false, name: 'Timmy'}">
 
+            <!-- x-on -->
             <button x-on:click="open = !open" class="bg-slate-700 text-white px-4 py-2 rounded-xl">
                 Toggle
             </button>
 
-            <div x-show="open" x-cloak>
+            <!-- x-show -->
+            <div x-show="open" x-transition x-cloak>
                 <p class="bg-gray-200 p-4 my-6 rounded">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, facilis?
                 </p>
             </div>
 
+            <!-- x-text -->
             <div class="my-4">
                 The value of name is <span x-text="name" class="font-bold"></span>
             </div>
+
+            <!-- x-effect -->
+            <div x-effect="console.log(open)"></div>
+            <!-- <div x-effect="alert(open)"></div> -->
         </div>
     </div>
 </body>
