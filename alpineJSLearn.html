@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/alpinejs" defer></script>
     <script src="./script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+        integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* x-cloak 8?
@@ -84,6 +87,9 @@
                     Click to Remove "Hello World"
                 </button>
             </div>
+
+            <!-- x-html - set the inner HTML of an element, make sure to add CDN link to <head> -->
+            <div x-html="(await axios.get('./_xHtmlAxiosMe.html')).data">...</div>
 
         </div>
 
