@@ -76,6 +76,15 @@
                 Add Post
             </button>
 
+            <div class="my-6">
+                <!-- x-ref - refer to elements directly by their specified keys using $refs  -->
+                <div x-ref="text">Hello World</div>
+
+                <button @click="$refs.text.remove()" class="bg-black text-white p-2 rounded-lg">
+                    Click to Remove "Hello World"
+                </button>
+            </div>
+
         </div>
 
         <footer x-data class="text-center mt-10">
