@@ -23,8 +23,9 @@
         <!-- x-data -->
         <div x-data="{open: false, name: 'Timmy'}">
 
-            <!-- x-on -->
-            <button x-on:click="open = !open" class="bg-slate-700 text-white px-4 py-2 rounded-xl">
+            <!-- x-on and x-bind (x-bind: or just on it's own : works simular to Vue) -->
+            <button x-on:click="open = !open" d:class="open ? 'bg-blue-800' : 'bg-slate-700'"
+                class=" text-white px-4 py-2 rounded-xl">
                 Toggle
             </button>
 
