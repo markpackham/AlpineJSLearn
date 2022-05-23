@@ -109,11 +109,22 @@
                     Notify
                 </button>
             </div>
+
+            <!-- $data, get the param we want -->
+            <button @click="getLatestPost($data.posts)" class="bg-orange-800 text-white mt-6 p-2 rounded-lg">
+                Get Latest Post
+            </button>
         </div>
 
         <footer x-data class="text-center mt-10">
             <p>Copyright &copy; <span x-text="new Date().getFullYear()"></span></p>
         </footer>
+
+        <script>
+            function getLatestPost(posts) {
+                alert(posts.slice(-1).pop().title)
+            }
+        </script>
     </div>
 </body>
 </html>
