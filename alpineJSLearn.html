@@ -66,6 +66,16 @@
             <template x-if="open">
                 <div class="bg-gray-50 p-2 mt-8">Template based on a condition</div>
             </template>
+
+            <!-- x-for - loop over an array of posts -->
+            <h3 class="text-2xl mt-6 mb-3 font-bold">Posts</h3>
+            <template x-for="post in posts">
+                <div x-text="post.title"></div>
+            </template>
+            <button @click="posts.push({title: 'New Post'})" class="bg-blue-800 text-white px-4 py-2 rounded-lg mt-4">
+                Add Post
+            </button>
+
         </div>
 
         <footer x-data class="text-center mt-10">
