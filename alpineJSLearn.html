@@ -92,15 +92,23 @@
             <div x-html="(await axios.get('./_xHtmlAxiosMe.html')).data">...</div>
 
             <!-- $el (this is a magic property like $refs) -->
+            <!-- we can use x-on:click or @click -->
             <button x-on:click="$el.innerHTML = 'I have been replaced'" class="mt-4 p-4 border">Replace text</button>
 
             <!-- x-init -->
             <div x-init="$el.innerText = 'I have been replaced on initialization'" class="mt-4 p-4 border">Replace text
                 on init</div>
 
-            <!-- $watch -->
+            <!-- x-init and $watch -->
             <!-- console.log the post whenever you click the "Add Post" button -->
             <div x-init="$watch('posts', value => console.log(value))"></div>
+
+            <!-- $dispatch (shortcut for dispatching browser events) -->
+            <div @notify="alert('You have been notfied via $dispatch')">
+                <button @click="$dispatch('notify')" class="bg-green-700 text-white p-2 mt-4 rounded-lg">
+                    Notify
+                </button>
+            </div>
         </div>
 
         <footer x-data class="text-center mt-10">
