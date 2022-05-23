@@ -91,6 +91,9 @@
             <!-- x-html - set the inner HTML of an element, make sure to add CDN link to <head> -->
             <div x-html="(await axios.get('./_xHtmlAxiosMe.html')).data">...</div>
 
+            <!-- $el -->
+            <button x-on:click="$el.innerHtml = 'I have been replaced'" class="mt-4 p-4 border">Replace text</button>
+
         </div>
 
         <footer x-data class="text-center mt-10">
